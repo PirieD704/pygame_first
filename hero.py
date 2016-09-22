@@ -13,6 +13,11 @@ class Hero(object):
 		self.rect.bottom = self.screen_rect.bottom # this will put our hero "bottom" at the bottom of the screen
 		#not self.rect.centery because we want the bottom on the bottom, not the center
 
+		self.moving_right = False #Set up movement booleans
+		self.moving_left = False
+		self.moving_up = False
+		self.moving_down = False
+
 	def draw_me(self):
 		self.screen.blit(self.image, self.rect) #Draw the Surface... (the image, the where)
 
