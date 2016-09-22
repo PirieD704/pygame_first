@@ -17,6 +17,7 @@ def run_game():
 
 	while 1: # run this loop forever...
 		gf.check_events(hero) # call gf (aliased for game_functions module) and get the check_events method
+		hero.update() #update the hero location
 		gf.update_screen(game_settings, screen, hero)
 
 

@@ -9,9 +9,15 @@ def check_events(hero):
 			sys.exit()
 		elif event.type == pygame.KEYDOWN: #the user pushed a key and it's down
 			if event.key == pygame.K_RIGHT: #the user pressed right
-				hero.rect.centerx += 10#Move the hero to the right!
+				hero.moving_right = True 
 			elif event.key == pygame.K_LEFT: #the user pressed left
-				hero.rect.centerx -= 10 #Move the hero to the left!
+				hero.moving_left = True #Move the hero to the left!
+		elif event.type == pygame.KEYUP: #user let go of a key
+			if event.key == pygame.K_RIGHT: #specifically the right arrow
+				hero.moving_right = False # boolean is changed to false
+			elif event.key == pygame.K_LEFT: #specifically the left arrow
+				hero.moving_left = False
+
 
 # Handle all the screen updates and drawings
 def update_screen(settings, screen, hero):
